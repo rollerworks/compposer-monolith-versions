@@ -1,0 +1,17 @@
+includes:
+    - vendor/rollerscapes/standards/phpstan.neon
+    - phpstan-baseline.neon
+
+parameters:
+    #reportUnmatchedIgnoredErrors: false
+
+    paths:
+        - ./src
+        - ./tests
+
+    ignoreErrors:
+        -
+            message: '#^Parameter \#1 \$string of function rtrim expects string, string\|null given\.$#'
+            identifier: argument.type
+            path: tests/PackageFilterTest.php
+

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- https://docs.phpunit.de/en/10.5/configuration.html -->
+<phpunit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="https://schema.phpunit.de/10.5/phpunit.xsd"
+         bootstrap="vendor/autoload.php"
+         beStrictAboutOutputDuringTests="true"
+         failOnWarning="true"
+         colors="true"
+         cacheDirectory=".phpunit.cache"
+         backupGlobals="true"
+>
+    <testsuites>
+        <testsuite name="Test Suite">
+            <directory>tests</directory>
+        </testsuite>
+    </testsuites>
+
+    <php>
+        <ini name="error_reporting" value="-1" />
+        <env name="SYMFONY_PHPUNIT_VERSION" value="10.4"/>
+        <env name="SYMFONY_DEPRECATIONS_HELPER" value="max[self]=0" />
+    </php>
+
+    <coverage />
+
+    <source>
+        <include>
+            <directory>src/</directory>
+        </include>
+        <exclude>
+            <directory>vendor/</directory>
+            <directory>tests/</directory>
+        </exclude>
+    </source>
+</phpunit>

@@ -1,0 +1,38 @@
+{
+    "name": "rollerworks/monolith-versions",
+    "type": "composer-plugin",
+    "description": "Composer plug-in to enforce all versions for the same packages of a monolith versioned distribution.",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Sebastiaan Stok",
+            "email": "s.stok@rollerscapes.net"
+        }
+    ],
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "require": {
+        "php": ">=8.1",
+        "composer-plugin-api": "^2.1"
+    },
+    "require-dev": {
+        "rollerscapes/standards": "^1.0",
+        "composer/composer": "^2.1",
+        "symfony/phpunit-bridge": "^7.4|^8.0",
+        "phpunit/phpunit": "^10.5 || ^12.5"
+    },
+    "conflict": {
+        "composer/semver": "<1.7.2"
+    },
+    "autoload": {
+        "psr-4": {
+            "Rollerworks\\MonolithVersions\\": "src"
+        }
+    },
+    "extra": {
+        "class": "Rollerworks\\MonolithVersions\\MonolithVersions",
+        "branch-alias": {
+            "dev-main": "1.0-dev"
+        }
+    }
+}

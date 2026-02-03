@@ -1,0 +1,10 @@
+composer.lock
+/vendor/
+smoketest/vendor/*
+
+phpunit.xml
+.phpunit.result.cache
+.phpunit.cache/
+.phpunit
+
+.php-cs-fixer.cache
