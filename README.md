@@ -143,21 +143,15 @@ export COMPOSER_MONOLITH_ROLLERWORKS_SEARCH="^2.1"
 composer update
 ```
 
-## Known issues
+## Conflicts when using `--with`
 
-The plugin adds an metadata package (during the pool building process), when a monolith configuration 
-is removed the metadata package is not always removed from the lock file.
-
-Technically this is not a problem, but it can cause issues when using the `composer update --lock` command.
-To resolve this remove the `composer.lock` file and run `composer update` again.
-
-Secondly, using the `--with` option of the `composer update` command might not work as expected
+Using the `--with` option of the `composer update` command might not work as expected
 when a lower version is required than the monolith constraint allows.
 
 Use an environment variable to override the constraint with a more permissive value
 to resolve this issue. 
 
-Like `COMPOSER_MONOLITH_ROLLERWORKS_SEARCH=""^2.0" composer update --with rollerworks/search:2.1`.
+Like `COMPOSER_MONOLITH_ROLLERWORKS_SEARCH="^2.0" composer update --with rollerworks/search:2.1`.
 
 ## Contributing
 
